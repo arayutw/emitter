@@ -1,0 +1,49 @@
+{
+  "name": "@arayutw/emitter",
+  "version": "0.0.1",
+  "description": "Functional Event Emitter(Pubsub).",
+  "keywords": [
+    "event",
+    "emitter",
+    "pubsub"
+  ],
+  "homepage": "https://github.com/arayutw/emitter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arayutw/emitter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arayutw/emitter/issues"
+  },
+  "main": "dist/scripts/emitter.cjs.js",
+  "module": "dist/scripts/emitter.esm.js",
+  "scripts": {
+    "build": "node_modules/typescript/bin/tsc;node build/script.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yuta Arai <arayutw@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "babel-loader": "^9.1.2",
+    "esbuild": "^0.17.10",
+    "rollup": "^3.18.0",
+    "rollup-plugin-dts": "^5.2.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "typescript": "^4.9.5",
+    "uglify-js": "^3.17.4"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/scripts/index.d.ts",
+      "require": "./dist/scripts/emitter.cjs.js",
+      "import": "./dist/scripts/emitter.esm.js",
+      "default": "./dist/scripts/emitter.esm.js"
+    },
+    "./dist/": "./dist/",
+    "./package.json": "./package.json"
+  }
+}
