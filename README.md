@@ -29,8 +29,13 @@ Please find various build files (esm, cjs, umd).
 
 ## Package
 If you plan to use it as a package, it is recommended to use [@arayutw/emitter-import](https://www.npmjs.com/package/@arayutw/emitter-import?activeTab=code). It is a minimal project with only TypeScript files that has the same contents as this repository.
+
 ```bash
 npm install @arayutw/emitter-import
+```
+
+```ts
+import Emitter from "@arayutw/emitter-import";
 ```
 
 ## Usage
