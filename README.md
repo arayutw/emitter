@@ -27,6 +27,12 @@ Please find various build files (esm, cjs, umd).
 - [jsdelivr](https://cdn.jsdelivr.net/npm/@arayutw/emitter@latest/dist/scripts/)
 
 
+## Package
+If you plan to use it as a package, it is recommended to use [@arayutw/emitter-import](https://www.npmjs.com/package/@arayutw/emitter-import?activeTab=code). It is a minimal project with only TypeScript files that has the same contents as this repository.
+```bash
+npm install @arayutw/emitter-import
+```
+
 ## Usage
 ### load
 #### ESM
