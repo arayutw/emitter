@@ -5,6 +5,7 @@ A minimal library for implementing Event Emitter functionality.
 - Written in Typescript
 - Has no dependencies (e.g. jquery)
 - Lightweight, 1KB
+- Supports ES6
 
 ## Install
 ### git
