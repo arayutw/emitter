@@ -2,17 +2,35 @@
 A minimal library for implementing Event Emitter functionality.
 
 ## Install
-### npm
+### git
 ```bash
-npm install "@arayutw/emitter"
+git clone https://github.com/arayutw/emitter.git
+cd emitter
+npm install
 npm run build
 ```
 
+### npm
+```bash
+npm install @arayutw/emitter
+```
+
+### CDN
+Please find various build files (esm, cjs, umd).
+[https://unpkg.com/browse/@arayutw/emitter@0.0.1/dist/scripts/](https://unpkg.com/browse/@arayutw/emitter@0.0.1/dist/scripts/)
+
+
 ## Usage
+### load
+```html
+<script src="https://unpkg.com/@arayutw/emitter@latest/dist/scripts/emitter.js"></script>
+<script>
+  class A extends Emitter {}
+</script>
+```
+
 ### `extends`
 ```js
-import {Emitter} from "@arayutw/emitter"
-
 class A extends Emitter {
   constructor() {
     super();
@@ -61,17 +79,18 @@ Development with Typescript is also convenient. Please define Generics (two argu
 | --- | --- | --- |
 | 1 | `A` | The value of `event.target`. |
 | 2 | `{eventName: {data1: number, data2: string}}` | An object where the keys are event names and the values are objects containing event data. The key names "type" and "target" are reserved. |
-
+  
+　
 ```ts
-import {Emitter} from "@arayutw/emitter"
+import Emitter from "{pathto}/emitter/src/scripts/index"
 
+// The key names "type" and "target" are reserved.
 type Events = {
   eventName: {
     eventData1: any
     eventData2: any
   }
   click: {
-    // The key names "type" and "target" are reserved.
     x: number
     y: number
   }
@@ -88,19 +107,21 @@ class A extends Emitter<A, Events> {
 
 const a = new A;
 
-// Ok
+a.on("click", (event) => console.log(event));
+
+// OK
 a.emit("click", {
   x: 1,
   y: 2,
 });
 
-// Error
+// NG
 a.emit("click2", {
   x: 1,
   y: 2,
 });
 
-// Error
+// NG
 a.emit("click", {
   x: "a",
   y: 2,
