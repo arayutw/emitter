@@ -18,7 +18,7 @@
   "main": "dist/scripts/emitter.cjs.js",
   "module": "dist/scripts/emitter.esm.js",
   "scripts": {
-    "build": "node_modules/typescript/bin/tsc;node build/script.mjs",
+    "build": "node_modules/typescript/bin/tsc;node run/build.mjs",
     "test": "node node_modules/jest/bin/jest"
   },
   "author": "Yuta Arai <arayutw@gmail.com>",
@@ -40,7 +40,7 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/scripts/index.d.ts",
+      "types": "./types/index.d.ts",
       "require": "./dist/scripts/emitter.cjs.js",
       "import": "./dist/scripts/emitter.esm.js",
       "default": "./dist/scripts/emitter.esm.js"

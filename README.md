@@ -1,6 +1,11 @@
 # Emitter
 A minimal library for implementing Event Emitter functionality.
 
+## Features
+- Written in Typescript
+- Has no dependencies (e.g. jquery)
+- Lightweight, 1KB
+
 ## Install
 ### git
 ```bash
@@ -17,11 +22,18 @@ npm install @arayutw/emitter
 
 ### CDN
 Please find various build files (esm, cjs, umd).
-[https://unpkg.com/browse/@arayutw/emitter@0.0.1/dist/scripts/](https://unpkg.com/browse/@arayutw/emitter@0.0.1/dist/scripts/)
+- [unpkg](https://unpkg.com/browse/@arayutw/emitter/dist/scripts/)
+- [jsdelivr](https://cdn.jsdelivr.net/npm/@arayutw/emitter@latest/dist/scripts/)
 
 
 ## Usage
 ### load
+#### ESM
+```js
+import Emitter from "<pathto>/emitter.esm"
+```
+
+#### UMD
 ```html
 <script src="https://unpkg.com/@arayutw/emitter@latest/dist/scripts/emitter.js"></script>
 <script>

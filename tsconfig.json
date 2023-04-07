@@ -9,7 +9,7 @@
         "skipLibCheck": true,
         "strict": true,
         "strictNullChecks": true,
-        "declarationDir": "./dist/scripts",
+        "declarationDir": "./types",
         "declaration": true,
         "lib": [
             "dom",
