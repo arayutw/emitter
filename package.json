@@ -45,5 +45,8 @@
       "import": "./dist/scripts/emitter.esm.js",
       "default": "./dist/scripts/emitter.esm.js"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
