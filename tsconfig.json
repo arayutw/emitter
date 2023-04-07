@@ -9,7 +9,7 @@
         "skipLibCheck": true,
         "strict": true,
         "strictNullChecks": true,
-        "declarationDir": "./types",
+        "declarationDir": "./dist/types",
         "declaration": true,
         "lib": [
             "dom",

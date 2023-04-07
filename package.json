@@ -40,7 +40,7 @@
   },
   "exports": {
     ".": {
-      "types": "./types/index.d.ts",
+      "types": "./dist/types/index.d.ts",
       "require": "./dist/scripts/emitter.cjs.js",
       "import": "./dist/scripts/emitter.esm.js",
       "default": "./dist/scripts/emitter.esm.js"
