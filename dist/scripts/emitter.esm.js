@@ -29,11 +29,13 @@ class Emitter {
   }
   on(name, handler, options) {
     this.off(name, handler);
-    this.Emitter$items.push([name, handler, options]);
+    this.Emitter$items.push([name, handler, {
+      once: !!(options == null ? void 0 : options.once)
+    }]);
   }
   off(name, handler) {
     for (let a = this.Emitter$items, i = 0; a.length > i; i++) {
-      if (name === a[i][0] && handler === a[i][1]) {
+      if ("*" === name || a[i][0] === name && a[i][1] === handler) {
         a.splice(i--, 1);
       }
     }
@@ -51,4 +53,4 @@ class Emitter {
     });
   }
 }
-export { Emitter };
+export { Emitter as default };

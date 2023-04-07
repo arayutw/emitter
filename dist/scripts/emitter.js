@@ -4,8 +4,8 @@
 * Copyright (c) 2023 Yuta Arai
 **/
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) : typeof define === 'function' && define.amd ? define(['exports'], factory) : (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.Emitter = {}));
-})(this, function (exports) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() : typeof define === 'function' && define.amd ? define(factory) : (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Emitter = factory());
+})(this, function () {
   'use strict';
 
   var __defProp = Object.defineProperty;
@@ -34,11 +34,13 @@
     }
     on(name, handler, options) {
       this.off(name, handler);
-      this.Emitter$items.push([name, handler, options]);
+      this.Emitter$items.push([name, handler, {
+        once: !!(options == null ? void 0 : options.once)
+      }]);
     }
     off(name, handler) {
       for (let a = this.Emitter$items, i = 0; a.length > i; i++) {
-        if (name === a[i][0] && handler === a[i][1]) {
+        if ("*" === name || a[i][0] === name && a[i][1] === handler) {
           a.splice(i--, 1);
         }
       }
@@ -56,5 +58,5 @@
       });
     }
   }
-  exports.Emitter = Emitter;
+  return Emitter;
 });
